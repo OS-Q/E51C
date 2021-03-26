@@ -2,9 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [ release ]
+    branches:
+      - master
+      - github_actions
+    tags:
+      - '*'
   pull_request:
-    branches: [ dev, release ]
+    branches:
+      - master
+      - github_actions
 
 jobs:
 
@@ -17,9 +23,9 @@ jobs:
         numbers: ['float']
         include:
           - lua_ver: 51
-            numbers: 'integral'  
+            numbers: 'integral'
           - lua_ver: 53
-            numbers: '64bit'  
+            numbers: '64bit'
     runs-on: ubuntu-16.04
 
     env:
@@ -91,9 +97,9 @@ jobs:
         include:
           - lua_ver: 51
             numbers: 'integral'
-            filter: 'grep -v "lua_modules/lm92/lm92.lua\|lua_modules/hdc1000/HDC1000.lua\|lua_examples/u8g2/graphics_test.lua"'  
+            filter: 'grep -v "lua_modules/lm92/lm92.lua\|lua_modules/hdc1000/HDC1000.lua\|lua_examples/u8g2/graphics_test.lua"'
           - lua_ver: 53
-            numbers: '64bit'  
+            numbers: '64bit'
             filter: 'cat'
     needs: build
     runs-on: ubuntu-16.04
@@ -155,9 +161,9 @@ jobs:
         numbers: ['float']
         include:
           - lua_ver: 51
-            numbers: 'integral'  
+            numbers: 'integral'
           - lua_ver: 53
-            numbers: '64bit'  
+            numbers: '64bit'
     needs: build
     runs-on: ubuntu-16.04
 
@@ -233,8 +239,8 @@ jobs:
             vm: 'ubuntu-16.04'
           - os: 'windows'
             vm: 'windows-latest'
-    runs-on: ${{ matrix.vm }} 
-      
+    runs-on: ${{ matrix.vm }}
+
     steps:
     - uses: actions/checkout@v2
       with:
@@ -260,8 +266,8 @@ jobs:
 
     strategy:
       fail-fast: false
-    runs-on: ubuntu-16.04 
-      
+    runs-on: ubuntu-16.04
+
     steps:
     - uses: actions/checkout@v2
       with:

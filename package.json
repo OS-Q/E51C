@@ -1,0 +1,7 @@
+{
+  "name": "E51B",
+  "description" : "ESP8266 freeRTOS",
+  "system": "*",
+  "url": "https://github.com/espressif/ESP8266_RTOS_SDK",
+  "version": "1.5.0"
+}
