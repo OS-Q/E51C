@@ -24,7 +24,7 @@ jobs:
             numbers: 'integral'
           - lua_ver: 53
             numbers: '64bit'
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     env:
       LUA: ${{ matrix.lua_ver }}
@@ -163,7 +163,7 @@ jobs:
           - lua_ver: 53
             numbers: '64bit'
     needs: build
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
@@ -234,7 +234,7 @@ jobs:
       matrix:
         include:
           - os: 'linux'
-            vm: 'ubuntu-20.04'
+            vm: 'ubuntu-latest'
           - os: 'windows'
             vm: 'windows-latest'
     runs-on: ${{ matrix.vm }}
@@ -255,6 +255,6 @@ jobs:
     - name: luacheck
       run: |
         PATH="/C/Program\ Files/Git/usr/bin:${PATH}"
-        sudo ./tools/travis/run-luacheck-${{ matrix.os }}.sh
+        ./tools/travis/run-luacheck-${{ matrix.os }}.sh
       shell: bash
 

@@ -18,6 +18,3 @@ tools/toolchains/
 .settings/
 .vscode
 .vs
-
-#ignore temp file for build infos
-buildinfo.h
