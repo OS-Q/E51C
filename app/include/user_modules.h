@@ -5,7 +5,7 @@
 
 // The default configuration is designed to run on all ESP modules including the 512 KB modules like ESP-01 and only
 // includes general purpose interface modules which require at most two GPIO pins.
-// See https://github.com/OS-Q/E51C/pull/1127 for discussions.
+// See https://github.com/nodemcu/nodemcu-firmware/pull/1127 for discussions.
 // New modules should be disabled by default and added in alphabetical order.
 #define LUA_USE_MODULES_ADC
 //#define LUA_USE_MODULES_ADS1115

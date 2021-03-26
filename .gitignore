@@ -5,7 +5,6 @@ sdk/
 cache/
 .ccache/
 local/
-user_config.h
 server-ca.crt
 luac.cross
 luac.cross.int

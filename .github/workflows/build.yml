@@ -13,8 +13,6 @@ on:
       - github_actions
 
 jobs:
-
-
   build:
     strategy:
       fail-fast: false
@@ -236,7 +234,7 @@ jobs:
       matrix:
         include:
           - os: 'linux'
-            vm: 'ubuntu-16.04'
+            vm: 'ubuntu-20.04'
           - os: 'windows'
             vm: 'windows-latest'
     runs-on: ${{ matrix.vm }}
@@ -257,22 +255,6 @@ jobs:
     - name: luacheck
       run: |
         PATH="/C/Program\ Files/Git/usr/bin:${PATH}"
-        ./tools/travis/run-luacheck-${{ matrix.os }}.sh
-      shell: bash
-
-
-
-  doc_check:
-
-    strategy:
-      fail-fast: false
-    runs-on: ubuntu-16.04
-
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: false
-    - name: all_modules_linked
-      run: ./tools/check_docs_module_linkage.sh
+        sudo ./tools/travis/run-luacheck-${{ matrix.os }}.sh
       shell: bash
 

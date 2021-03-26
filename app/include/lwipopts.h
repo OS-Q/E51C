@@ -902,7 +902,7 @@
 /**
  * TCP_MSL: Maximum segment lifetime
  * Override for <tcp_impl.h> file
- * See https://github.com/OS-Q/E51C/issues/1836 for details
+ * See https://github.com/nodemcu/nodemcu-firmware/issues/1836 for details
  */
 #ifndef TCP_MSL
 #define TCP_MSL 5000UL
@@ -1464,7 +1464,7 @@
  * SO_REUSE==1: Enable SO_REUSEADDR option.
  */
 #ifndef SO_REUSE
-/* See https://github.com/OS-Q/E51C/issues/1836 for details */
+/* See https://github.com/nodemcu/nodemcu-firmware/issues/1836 for details */
 #define SO_REUSE                        1
 #endif
 
